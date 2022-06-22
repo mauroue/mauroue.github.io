@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(./assets/img/memphis-mini.webp);
+  background-image: url(./assets/img/pipes.webp);
   background-repeat: repeat;
   background-blend-mode: multiply;
   background-color: #f2f2f2;
@@ -52,12 +52,15 @@ a:visited {
 }
 
 .nav {
+  display: flex;
+  justify-content: center;
   padding: 40px;
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 70%;
 }
 
 .top-container {
@@ -69,7 +72,7 @@ a:visited {
 }
 
 .fade-in-from-bottom {
-  animation: 0.8s ease-in-out 0.1s 1 fadeInFromBottom;
+  animation: 0.5s ease-in-out 0.1s 1 fadeInFromBottom;
 }
 
 .thumbs-img {
@@ -81,11 +84,12 @@ a:visited {
   border: solid 2px #41403e;
   filter: sepia(50%);
   margin-right: 50px;
+  min-width: 180px;
 }
 
 @keyframes fadeInFromBottom {
   0% {
-    transform: translateY(+25%);
+    transform: translateY(+5%);
     opacity: 0;
   }
   100% {
@@ -125,7 +129,8 @@ a:visited {
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 100px;
+  flex-wrap: wrap;
+  gap: 10% 10%;
 }
 
 .project-card {
@@ -133,8 +138,8 @@ a:visited {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 15%;
-  padding-top: 20px;
+  width: 240px;
+  padding: 20px 0 0 0;
   height: 400px;
 }
 
@@ -193,7 +198,7 @@ a:visited {
 .sml-container {
   display: flex;
   justify-content: space-between;
-  width: 500px;
+  width: 50%;
   padding-bottom: 300px;
 }
 
@@ -212,4 +217,12 @@ a:visited {
   margin: 12px;
   font-size: 22px;
   width: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 20px;
+  }
 }
