@@ -66,14 +66,21 @@ a:visited {
 
 .top-container {
   display: flex;
-  padding-top: 150px;
+  margin-top: 100px;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.fade-in-from-bottom {
-  animation: 0.5s ease-in-out 0.1s 1 fadeInFromBottom;
+.fade-in {
+  opacity: 0;
+  transform: translateY(+5%);
+  transition: all 250ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0%);
 }
 
 .thumbs-img {
@@ -87,27 +94,13 @@ a:visited {
   filter: sepia(50%);
 }
 
-@keyframes fadeInFromBottom {
-  0% {
-    transform: translateY(+5%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
 .about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 80px 0 80px 0;
   width: 100%;
-  padding-top: 150px;
-  opacity: 0;
-  animation-fill-mode: forwards;
-  padding-bottom: 150px;
 }
 
 .about-container > p {
@@ -121,8 +114,10 @@ a:visited {
   letter-spacing: 3px;
   line-height: 25px;
 
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
   border-bottom-right-radius: 250px 30px;
-  border-bottom-left-radius: 0px 255px;
+  border-bottom-left-radius: 30px 255px;
   border: solid 2px #41403e;
   background-color: #f2f2f2;
 }
@@ -130,8 +125,6 @@ a:visited {
 .projects-container {
   text-align: center;
   width: 100%;
-  opacity: 0;
-  animation-fill-mode: forwards;
 }
 
 .cards-container {
@@ -151,10 +144,7 @@ a:visited {
   width: 240px;
   padding: 20px 0 0 0;
   height: 400px;
-}
 
-.project-card.card-effect {
-  background: transparent;
   padding: 0.5rem 0.5rem;
   margin: 0 0.5rem;
   font-size: 1rem;
@@ -168,9 +158,9 @@ a:visited {
   transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s;
 }
 
-.card-effect:hover {
+.project-card:hover {
   box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.3);
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 .contact-container {
@@ -179,9 +169,7 @@ a:visited {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top: 100px;
-  opacity: 0;
-  animation-fill-mode: forwards;
+  margin: 100px 0 200px 0;
 }
 
 .contact-title {
@@ -211,7 +199,6 @@ a:visited {
   display: flex;
   justify-content: space-between;
   width: 50%;
-  padding-bottom: 300px;
 }
 
 .social-media-links a {
@@ -228,6 +215,22 @@ a:visited {
   align-items: center;
   margin: 12px;
   font-size: 22px;
+  width: 32px;
+}
+
+.floating-button {
+  background-color: #f2f2f2;
+  position: sticky;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 15px 255px;
+  border: solid 2px #41403e;
+  bottom: 2%;
+  left: 95%;
+}
+
+.floating-button img {
   width: 32px;
 }
 
