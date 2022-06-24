@@ -1,5 +1,6 @@
 :root {
   font-family: Amatic SC, cursive;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -219,19 +220,33 @@ a:visited {
 }
 
 .floating-button {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 40px;
+  right: 40px;
+  color: black;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
   background-color: #f2f2f2;
-  position: sticky;
+  background-image: url('./assets/img/arrow-single-up.svg');
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: solid 2px black;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
   border-bottom-right-radius: 225px 15px;
   border-bottom-left-radius: 15px 255px;
-  border: solid 2px #41403e;
-  bottom: 2%;
-  left: 95%;
 }
 
-.floating-button img {
-  width: 32px;
+h2::before {
+  display: block;
+  content: ' ';
+  margin-top: -285px;
+  height: 285px;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 600px) {
